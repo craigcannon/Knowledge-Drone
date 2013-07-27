@@ -1,0 +1,26 @@
+A basic tutorial on scraping the world's knowledge.
+
+Steps:
+1. Clone the Knowledge Drone repo to your Mac from Github.
+	- You may have to install the Github Mac app
+2. Set your variables in KnowledgeDrone.py
+3. Do the Terminal stuff below
+	- Type out all the stuff below the dashes in your terminal unless it's in brackets.
+	- Useful terminal commands:
+		pwd - this tells you where you are
+		cd [then a folder name] - navigates you to that folder
+		cd .. - this takes you back one folder
+		ls - this tells you what files are in the current directory
+		sudo - this means superuser. if you ever get a permission denied error, use this.
+4. Assemble the images into a PDF using Preview 
+	- http://apple.stackexchange.com/questions/812/how-can-i-combine-two-pdfs-in-preview
+	- I could have done this in Python but you would've had to install a bunch of complicated modules
+5. $$$$$$$$$
+
+----------------------------------------
+sudo pip install beautifulsoup4
+[enter your password]
+
+[navigate to where you put the KnowledgeDrone.py file]
+python KnowledgeDrone.py
+[watch the magic happen... hopefully.]
