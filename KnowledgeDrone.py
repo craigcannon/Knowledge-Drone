@@ -49,17 +49,23 @@ out_folder = '/Users/Craig/Desktop/img'
 
 def main(url, page_count, out_folder):
     i = 1
+
+    # Grab the doc title
+    url_initial = url + '%s' % i
+    html_initial = urllib2.urlopen(url_initial)
+    soup_initial = BeautifulSoup(html_initial.read())
+    title = soup_initial.find('h1', id='srch_wrd')
+    title = title.string
+
     while i <= page_count:
+        # Generate the new url
         newurl = url + '%s' % i
-        print "Consuming Knowledge from Page", i
+        print "Consuming Knowledge on Page", i
         html = urllib2.urlopen(newurl)
         soup = BeautifulSoup(html.read())
 
-        # Grab's the doc title
-        title = soup.find('h1', id='srch_wrd')
-        title = title.string
-
-        for image in soup.findAll('img', id='page_image'):
+        # Grab the page image
+        for image in soup.findAll('img', id='page_image', limit=1):
             filename = title + ' ' + 'Pg.' + ' ' +'%s' % i
             outpath = os.path.join(out_folder, filename)
             parsed = list(urlparse.urlparse(newurl))
